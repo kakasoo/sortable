@@ -1,7 +1,8 @@
 {
   "name": "@kakasoo/sortable",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "private": false,
   "publishConfig": {
     "access": "public"
