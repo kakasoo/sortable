@@ -1,0 +1,19 @@
+{
+  "name": "sortable",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@kakasoo/deep-strict-types": "^1.0.1",
+    "@kakasoo/proto-typescript": "^1.28.7"
+  }
+}
