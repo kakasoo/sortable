@@ -1,11 +1,14 @@
-import { DeepStrictObjectKeys } from "@kakasoo/deep-strict-types";
-import { StringPrototype } from "@kakasoo/proto-typescript";
+import { StringPrototype, StringType } from "@kakasoo/proto-typescript";
+import { StringToDeepObject } from "./types";
 
-export function getSortable<T extends object>(
-  key: DeepStrictObjectKeys<T>,
-  direction: "asc" | "desc"
-) {
-  const sortable: Record<string, any> = {};
+export function getSortable<
+  Key extends string,
+  Direction extends "asc" | "desc"
+>(
+  key: Key,
+  direction: Direction
+): StringToDeepObject<StringType.Split<Key, ".">, Direction> {
+  const sortable: any = {};
   const keys = StringPrototype.split(key, ".");
   keys.reduce((acc, key, index, arr) => {
     if (arr.length === index + 1) {
