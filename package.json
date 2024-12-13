@@ -2,6 +2,10 @@
   "name": "@kakasoo/sortable",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc"
   },
