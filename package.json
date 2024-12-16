@@ -1,6 +1,6 @@
 {
   "name": "@kakasoo/sortable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
@@ -8,13 +8,14 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "rimraf ./dist && tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "rimraf": "^6.0.1",
     "typescript": "^5.7.2"
   },
   "dependencies": {
