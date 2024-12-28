@@ -1,0 +1,55 @@
+name: update_version
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'package.json'
+
+jobs:
+  update_version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Clean Git working directory
+        run: |
+          git reset --hard
+          git clean -fd
+
+      - name: Pull latest changes
+        run: git pull
+
+      - name: Install dependencies again
+        run: npm install
+
+      - name: Configure git
+        run: |
+          git config --local user.email "actions@example.com"
+          git config --local user.name "GitHub Actions"
+
+      - name: Authenticate to NPM registry
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Bump version
+        run: npm version patch
+
+      - name: Publish to NPM
+        run: npm publish
+
+      - name: Push changes to repository
+        run: |
+          git push --set-upstream origin main --follow-tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
