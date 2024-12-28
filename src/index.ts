@@ -1,4 +1,4 @@
-import { DeepStrictObjectKeys } from "@kakasoo/deep-strict-types";
+import { DeepStrictObjectLastKeys } from "@kakasoo/deep-strict-types";
 import { StringPrototype, StringType } from "@kakasoo/proto-typescript";
 import { StringToDeepObject } from "./types";
 
@@ -32,7 +32,7 @@ export function getSortable<
  */
 export const createSortable =
   <T extends object>() =>
-  <Key extends DeepStrictObjectKeys<T>, Direction extends "asc" | "desc">(
+  <Key extends DeepStrictObjectLastKeys<T>, Direction extends "asc" | "desc">(
     key: Key,
     direction: Direction
   ) =>
