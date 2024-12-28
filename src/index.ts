@@ -25,6 +25,11 @@ export function getSortable<
   return sortable;
 }
 
+/**
+ * Create getSortable Function by using interface and type.
+ *
+ * @returns getSortable {@link getSortable sortableFn} function
+ */
 export const createSortable =
   <T extends object>() =>
   <Key extends DeepStrictObjectKeys<T>, Direction extends "asc" | "desc">(

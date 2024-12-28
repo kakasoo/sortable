@@ -1,5 +1,7 @@
 # sortable
 
+## getSortable
+
 ```bash
 $ npm i @kakasoo/sortable
 ```
@@ -39,4 +41,23 @@ then, You can use like it, Right?
 prisma.user.findMany({
   orderBy: orderBy("user.articles.created_at", "desc"),
 });
+```
+
+## createSortable
+
+```ts
+interface Example {
+  user: {
+    name: string;
+    createdAt: string;
+  };
+}
+
+// #1
+const sortable = createSortable<Example>();
+sortable("user.createdAt", "asc"); // It guarantees type inference.
+
+// #2
+// also you can use like this:
+createSortable<Example>()("user.createdAt", "asc");
 ```
