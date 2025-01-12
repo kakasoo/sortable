@@ -16,10 +16,10 @@
   "description": "",
   "devDependencies": {
     "rimraf": "^6.0.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   },
   "dependencies": {
-    "@kakasoo/deep-strict-types": "^1.0.16",
+    "@kakasoo/deep-strict-types": "^1.0.22",
     "@kakasoo/proto-typescript": "^1.28.7"
   }
 }
